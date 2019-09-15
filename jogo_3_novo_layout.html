@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="lojinhaStyle.css">
+  <title>Jogo 3</title>
+</head>
+<body>
+
+  <div class="container">
+    <div class="row bg-primary" align="center">
+      <div class="col-md-12">
+        <span><h4><strong>JOGO DA LOJINHA</strong></h4></span>
+      </div>
+    </div>
+
+    <div class="header_modules">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-9 bg-success colImagem">
+            <img id="imagemLojinha" src="img_loja/loja_0.png" class="img-thumbnail" alt="lojinha" width="600" height="393">
+            <button class="btn" type="button" id="buttonComprar">COMPRAR</button>
+            <div class="banner bannerPontos">
+              <div class="banner-box banPontos bg-warning" align="center">
+                <h1 id="mostraPontos">pontos</h1>
+                <h3>pontos</h3>
+              </div>
+            </div>
+          </div>
+          <div class="banners col-sm-3">
+            <div style="opacity: 1; left: auto;">
+              <div class="banner-box bg-success" align="center">
+                <div class="header">
+                  <h3><strong>Preço do Produto</strong></h3>
+                </div>
+                <div>
+                  <h2 id="number" value=0></h2>
+                  <h5>REAIS</h5>
+                  <button class="btn" type="button" id="buttonPreco">PREÇO</button>
+                  <p> </p>
+                </div>
+              </div>
+            </div>
+            <p></p>
+            <div style="opacity: 1; left: auto;">
+              <div class="banner-box bg-success" align="center">
+                <div class="header">
+                  <h3><strong>Seu Dinheiro</strong></h3>
+                </div>
+                <div>
+                  <h2 id="playerMoneyRetorno"></h2>
+                  <h4>REAIS</h4>
+                  <button class="btn" type="button" id="buttonPagar">PAGAR</button>
+                  <p> </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container" id="contNotas">
+  <div class="row" class="rowNotas">
+    <div class="col-sm-9" id="colNotas">
+      <ul id="listaNotas">
+        <li id="notas" class="dinheiros" data-dinId="2.00"></li>
+        <li id="notas" class="dinheiros" data-dinId="5.00"></li>
+        <li id="notas" class="dinheiros" data-dinId="10.00"></li>
+        <li id="notas" class="dinheiros" data-dinId="20.00"></li>
+        <li id="notas" class="dinheiros" data-dinId="50.00"></li>
+        <li id="notas" class="dinheiros" data-dinId="100.00"></li>
+      </ul>
+    </div>
+    <div class="col-sm-3" id="colMoedas"  align="center">
+      <button id="moeda1" class="dinheiros moedas1real" data-dinId="1.00"><img src="notas/1_real_transp.png" /></button>
+      <button id="moeda50" class="dinheiros moedas50cents" data-dinId="0.50"><img src="notas/50_centavos_transp.png" /></button>
+      <button id="moeda10" class="dinheiros moedas10cents" data-dinId=0.10><img src="notas/10_centavos_transp.png" /></button>
+      <button id="moeda25" class="dinheiros moedas25cents" data-dinId="0.25"><img src="notas/25_centavos_transp.png" /></button>
+      <button id="moeda5" class="dinheiros moedas5cents" data-dinId=0.05><img src="notas/5_centavos_transp.png" /></button>
+    </div>
+  </div>
+</div>
+<div>
+  <audio id="musicaFundo"></audio>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+<script>
+
+$(document).ready(function(){
+  var contador = 0;
+  var playerMoney = 0;
+  var grana = 0;
+  var comparador = 0;
+  var pontos = 0;
+
+  //$.playSound('musicaFundo.mp3');
+
+  //Funcao para tocar musica no jogo sem parar
+  /*
+  $(function(){
+    var audio = new Audio("musicaFundo.mp3");
+    audio.play();
+    audio.addEventListener('ended', function() {
+      this.currentTime = 0;
+      this.play();
+    }, false);
+    audioBg.play();
+  });
+  */
+
+  $(function() {
+    $('#buttonComprar').on('click', function() {
+      $("#buttonPreco").prop('disabled',false);
+      $("#buttonComprar").prop('disabled',true);
+      console.log(contador);
+      contador += 1;
+      playerMoney = "0";
+      $("#playerMoneyRetorno").html(function() {
+        return playerMoney;});
+        comparador = "0";
+        $("#number").html(function() {
+          return comparador;});
+          $('#imagemLojinha').attr('src', 'img_loja/loja_' + contador + '.png');
+        });
+      });
+
+      $(function() {
+        $('.dinheiros').on('click', function() {
+          grana = $(this).attr('data-dinId');
+          playerMoney = parseFloat(playerMoney) + parseFloat(grana);
+          playerMoney = parseFloat(playerMoney.toFixed(2));
+          $("#playerMoneyRetorno").html(function() {
+            return playerMoney;
+          });
+        });
+      });
+
+
+
+      $(function() {
+        $('#buttonPreco').on('click', function() {
+          $("#buttonPagar").prop('disabled',false);
+          $("#buttonPreco").prop('disabled',true);
+          let nuMber = 0;
+          let decimal = 0;
+          while(nuMber === 0){
+            nuMber = gerarNumeroAleatorio(100, 5);
+          }
+          decimal= gerarNumeroAleatorio(19, 5);
+          $('#number').text(nuMber + "." + decimal);
+          comparador = parseFloat($('#number').html());
+
+        });
+      });
+
+      function gerarNumeroAleatorio(min, multiplo){
+        return Math.floor(Math.random()*min)*multiplo;
+      }
+
+      $(function() {
+        $('#buttonPagar').on('click', function() {
+          console.log(grana);
+          console.log(playerMoney);
+          console.log(comparador);
+          $("#buttonPagar").prop('disabled',true);
+          if (comparador == 0) {
+            $('#imagemLojinha').attr('src', 'img_loja/preco_0.png');
+            $("#buttonPagar").prop('disabled',false);
+          }
+          else {
+            if (comparador == playerMoney && contador <= 7) {
+              $('#imagemLojinha').attr('src', 'img_loja/acerto.png');
+              pontos += 100;
+              $("#mostraPontos").html(function() {
+                return pontos;
+              });
+            }
+            else if (comparador < playerMoney  && contador <= 7) {
+              $('#imagemLojinha').attr('src', 'img_loja/mais.png');
+            }
+            else if (comparador > playerMoney  && contador <= 7) {
+              $('#imagemLojinha').attr('src', 'img_loja/menos.png');
+            }
+          }
+          $("#buttonComprar").prop('disabled',false);
+          if (contador == 7) {
+            $("#buttonComprar").prop('disabled',true);
+            setTimeout(function() {
+              contador += 1;
+              if (contador == 8 && pontos == 700) {
+                $(".btn").prop('disabled',true);
+                $('#imagemLojinha').attr('src', 'img_loja/finalTotal.png');
+              } else if (contador == 8) {
+                $(".btn").prop('disabled',true);
+                $('#imagemLojinha').attr('src', 'img_loja/final.png');
+              }
+            }, 2000);
+          }
+        });
+      });
+
+      $(function() {
+        $('#buttonZero').on('click', function() {
+          playerMoney = "0";
+          $("#playerMoneyRetorno").html(function() {
+            return playerMoney;});
+          });
+        });
+
+
+      });
+
+      </script>
+
+
+    </body>
+    </html>

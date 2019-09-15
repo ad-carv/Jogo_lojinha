@@ -1,0 +1,241 @@
+body
+{
+  background-color: #4ddbff;
+}
+
+ul
+{
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40vh;
+  background: #ccc;
+  margin: 0;
+  padding: 0;
+}
+
+ul li
+{
+  list-style: none;;
+  position: relative;
+  width: 16.6667%;
+  height: 100%;
+  border-right: 1px solid #000;
+  float: left;
+  box-sizing: border-box;
+  transition: 1.0s;
+  text-align: center;
+}
+
+ul li:nth-child(1)
+{
+  background-image: url("notas/2_back.jpg");
+  background-size: cover;
+  background-position: left;
+}
+
+ul li:nth-child(2)
+{
+  background-image: url("notas/5_back.jpg");
+  background-size: cover;
+  background-position: left;
+}
+
+ul li:nth-child(3)
+{
+  background-image: url("notas/10_back.jpg");
+  background-size: cover;
+  background-position: left;
+}
+
+ul li:nth-child(4)
+{
+  background-image: url("notas/20_back.jpg");
+  background-size: cover;
+  background-position: left;
+}
+
+ul li:nth-child(5)
+{
+  background-image: url("notas/50_back.jpg");
+  background-size: cover;
+  background-position: left;
+}
+
+ul li:nth-child(6)
+{
+  background-image: url("notas/100_back.jpg");
+  background-size: cover;
+  background-position: left;
+}
+
+ul:hover li
+{
+  width: 3%;
+}
+
+ul li:hover
+{
+  width: 85%;
+}
+
+#colMoedas
+{
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40vh;
+  margin: 0;
+  padding: 0;
+  background-color: #28a745;
+  border: 2px solid black;
+  border-radius: 8px;
+  align-content: center;
+}
+
+button.dinheiros
+{
+  border-radius: 50%;
+  background-color: rgba(0,0,0,0.0);
+  border-style: none;
+}
+
+.moedas1real>img
+{
+  height: 104px;
+  width: 104px;
+  position: relative;
+            top: 10px;
+}
+
+.moedas50cents>img
+{
+  height: 90px;
+  width: 90px;
+}
+
+.moedas25cents>img
+{
+  height: 93px;
+  width: 93px;
+}
+
+.moedas10cents>img
+{
+  height: 75px;
+  width: 75px;
+  position: relative;
+            top: 10px;
+}
+
+.moedas5cents>img
+{
+  height: 83px;
+  width: 83px;
+}
+
+.header_modules
+{
+  border-radius: 5%;
+  border-color: rgb(255, 255, 255);
+}
+
+.banner-box
+{
+  border: 2px solid black;
+  border-radius: 8px;
+  align-content: center;
+  -moz-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 0px rgba(161,142,016,0.6);
+	-webkit-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 0px rgba(161,142,016,0.6);
+	box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 0px rgba(161,142,016,0.6);
+}
+
+.colImagem
+{
+  border: 2px solid black;
+  border-radius: 8px;
+  align-content: center;
+  -moz-box-shadow:
+    0px 1px 3px rgba(000,000,000,0.5),
+    inset 0px 0px 0px rgba(161,142,016,0.6);
+  -webkit-box-shadow:
+    0px 1px 3px rgba(000,000,000,0.5),
+    inset 0px 0px 0px rgba(161,142,016,0.6);
+  box-shadow:
+    0px 1px 3px rgba(000,000,000,0.5),
+    inset 0px 0px 0px rgba(161,142,016,0.6);
+  height: 402px;
+}
+
+.btn
+{
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #ffffff;
+	padding: 8px 20px;
+	background: -moz-linear-gradient(
+		top,
+		#f48965 0%,
+		#ff4000 20%,
+		#ff4000 80%,
+		#b9421e);
+	background: -webkit-gradient(
+		linear, left top, left bottom,
+		from(#f48965),
+		color-stop(0.20, #ff4000),
+		color-stop(0.80, #ff4000),
+		to(#b9421e));
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	border: 0px solid #000000;
+	-moz-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 0px rgba(161,142,016,0.6);
+	-webkit-box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 0px rgba(161,142,016,0.6);
+	box-shadow:
+		0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 0px rgba(161,142,016,0.6);
+	text-shadow:
+		0px -1px 0px rgba(255,255,255,0.8),
+		0px 1px 0px rgba(255,255,255,0.3);
+}
+
+#buttonComprar
+{
+  position: relative;
+    left: 40px;
+    bottom: 80px;
+    -moz-box-shadow:
+  		0px 1px 3px rgba(000,000,000,0.5),
+  		inset 0px 0px 0px rgba(161,142,016,0.6);
+  	-webkit-box-shadow:
+  		0px 1px 3px rgba(000,000,000,0.5),
+  		inset 0px 0px 0px rgba(161,142,016,0.6);
+  	box-shadow:
+  		0px 1px 3px rgba(000,000,000,0.5),
+  		inset 0px 0px 0px rgba(161,142,016,0.6);
+}
+
+.banPontos
+{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  color: #000;
+  padding: 8px 20px;
+  height: 120px;
+  width: 180px;
+  position: relative;
+            left: 615px;
+            bottom: 180px;
+}
